@@ -1,26 +1,24 @@
 /* =========================================================
-   MALES — LUXURY FASHION WEBSITE
-   MAIN DESIGN SYSTEM
+   MALES
+   LUXURY FASHION WEBSITE
+   FINAL DESIGN SYSTEM
    ========================================================= */
 
 :root {
   --black: #080808;
   --black-soft: #101010;
-  --black-card: #141414;
+  --black-card: #151515;
+
   --white: #f5f3ee;
   --white-soft: #d8d5ce;
   --grey: #8d8b86;
+
   --line: rgba(255, 255, 255, 0.14);
 
   --max-width: 1500px;
 
-  --space-xs: 10px;
-  --space-sm: 20px;
-  --space-md: 40px;
-  --space-lg: 80px;
-  --space-xl: 140px;
-
-  --transition: 0.35s cubic-bezier(.22,.61,.36,1);
+  --transition:
+    0.35s cubic-bezier(.22, .61, .36, 1);
 }
 
 
@@ -41,6 +39,7 @@ html {
 body {
   background: var(--black);
   color: var(--white);
+
   font-family:
     "Helvetica Neue",
     Helvetica,
@@ -48,11 +47,13 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
   overflow-x: hidden;
 }
 
 img {
   display: block;
+
   max-width: 100%;
 }
 
@@ -68,7 +69,24 @@ button {
 
 a {
   color: inherit;
+
   text-decoration: none;
+}
+
+
+/* =========================================================
+   ASSET SAFETY SYSTEM
+   SEMUA GAMBAR WAJIB UTUH
+   ========================================================= */
+
+.males-asset {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
 }
 
 
@@ -78,6 +96,7 @@ a {
 
 .site-header {
   position: fixed;
+
   z-index: 1000;
 
   top: 0;
@@ -89,24 +108,22 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.85),
-      rgba(0,0,0,.35)
+      rgba(0, 0, 0, .90),
+      rgba(0, 0, 0, .35)
     );
 
   backdrop-filter: blur(16px);
 
   border-bottom:
-    1px solid rgba(255,255,255,.08);
-
-  transition:
-    background var(--transition);
+    1px solid rgba(255, 255, 255, .08);
 }
 
 .header-inner {
-  width: min(
-    var(--max-width),
-    calc(100% - 80px)
-  );
+  width:
+    min(
+      var(--max-width),
+      calc(100% - 80px)
+    );
 
   height: 100%;
 
@@ -121,7 +138,7 @@ a {
 
 
 /* =========================================================
-   LOGO
+   BRAND LOGO
    ========================================================= */
 
 .brand {
@@ -129,13 +146,21 @@ a {
 
   align-items: center;
 
+  justify-content: center;
+
   min-width: 130px;
+
+  height: 100%;
 }
 
 .brand img {
-  width: auto;
+  display: block;
 
-  height: 48px;
+  width: auto;
+  height: auto;
+
+  max-width: 150px;
+  max-height: 56px;
 
   object-fit: contain;
 }
@@ -156,13 +181,13 @@ a {
 .main-navigation a {
   position: relative;
 
+  color: var(--white-soft);
+
   font-size: 10px;
 
   letter-spacing: 2.5px;
 
   text-transform: uppercase;
-
-  color: var(--white-soft);
 
   transition:
     color var(--transition);
@@ -174,11 +199,9 @@ a {
   position: absolute;
 
   left: 0;
-
   bottom: -7px;
 
   width: 0;
-
   height: 1px;
 
   background: var(--white);
@@ -204,7 +227,6 @@ a {
   display: none;
 
   width: 42px;
-
   height: 42px;
 
   border: 0;
@@ -215,6 +237,8 @@ a {
 
   justify-content: center;
 
+  align-items: center;
+
   gap: 5px;
 }
 
@@ -222,7 +246,6 @@ a {
   display: block;
 
   width: 24px;
-
   height: 1px;
 
   background: var(--white);
@@ -236,6 +259,8 @@ a {
 .hero {
   position: relative;
 
+  width: 100%;
+
   min-height: 100vh;
 
   height: 900px;
@@ -245,6 +270,8 @@ a {
   align-items: flex-end;
 
   overflow: hidden;
+
+  background: var(--black);
 }
 
 .hero-background {
@@ -252,7 +279,15 @@ a {
 
   inset: 0;
 
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   overflow: hidden;
+
+  background: var(--black);
 }
 
 .hero-background::after {
@@ -262,27 +297,36 @@ a {
 
   inset: 0;
 
+  z-index: 2;
+
+  pointer-events: none;
+
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.82) 0%,
-      rgba(0,0,0,.45) 45%,
-      rgba(0,0,0,.15) 100%
+      rgba(0, 0, 0, .80),
+      rgba(0, 0, 0, .30),
+      rgba(0, 0, 0, .10)
     ),
 
     linear-gradient(
       0deg,
-      rgba(0,0,0,.85) 0%,
-      transparent 55%
+      rgba(0, 0, 0, .88),
+      transparent 58%
     );
 }
 
 .hero-background img {
-  width: 100%;
+  position: relative;
 
+  z-index: 1;
+
+  width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center center;
 
   animation:
     heroZoom 18s ease-out forwards;
@@ -291,7 +335,7 @@ a {
 @keyframes heroZoom {
 
   from {
-    transform: scale(1.08);
+    transform: scale(1.025);
   }
 
   to {
@@ -308,12 +352,13 @@ a {
 .hero-content {
   position: relative;
 
-  z-index: 2;
+  z-index: 5;
 
-  width: min(
-    var(--max-width),
-    calc(100% - 160px)
-  );
+  width:
+    min(
+      var(--max-width),
+      calc(100% - 160px)
+    );
 
   margin: 0 auto;
 
@@ -321,19 +366,21 @@ a {
 }
 
 .eyebrow {
+  margin-bottom: 20px;
+
+  color: var(--grey);
+
   font-size: 10px;
 
   letter-spacing: 4px;
 
   text-transform: uppercase;
-
-  color: var(--grey);
-
-  margin-bottom: 20px;
 }
 
 .hero-title {
   max-width: 1050px;
+
+  margin-bottom: 35px;
 
   font-size:
     clamp(
@@ -342,27 +389,25 @@ a {
       145px
     );
 
+  font-weight: 500;
+
   line-height: .88;
 
   letter-spacing: -5px;
 
-  font-weight: 500;
-
   text-transform: uppercase;
-
-  margin-bottom: 35px;
 }
 
 .hero-description {
   max-width: 570px;
+
+  margin-bottom: 35px;
 
   color: var(--white-soft);
 
   font-size: 16px;
 
   line-height: 1.8;
-
-  margin-bottom: 35px;
 }
 
 
@@ -379,14 +424,13 @@ a {
 
   min-height: 52px;
 
-  padding:
-    0 30px;
+  padding: 0 30px;
 
   border:
-    1px solid rgba(255,255,255,.45);
+    1px solid rgba(255, 255, 255, .45);
 
   background:
-    rgba(255,255,255,.02);
+    rgba(255, 255, 255, .02);
 
   color: var(--white);
 
@@ -423,15 +467,15 @@ a {
 
   overflow: hidden;
 
+  white-space: nowrap;
+
+  background: var(--black-soft);
+
   border-top:
     1px solid var(--line);
 
   border-bottom:
     1px solid var(--line);
-
-  background: var(--black-soft);
-
-  white-space: nowrap;
 }
 
 .ticker-track {
@@ -453,18 +497,17 @@ a {
   padding:
     21px 45px;
 
+  color: var(--white-soft);
+
   font-size: 10px;
 
   letter-spacing: 3px;
 
   text-transform: uppercase;
-
-  color: var(--white-soft);
 }
 
 .ticker-dot {
   width: 4px;
-
   height: 4px;
 
   border-radius: 50%;
@@ -495,18 +538,21 @@ a {
 }
 
 .section-container {
-  width: min(
-    var(--max-width),
-    calc(100% - 160px)
-  );
+  width:
+    min(
+      var(--max-width),
+      calc(100% - 160px)
+    );
 
   margin: auto;
 
   padding:
-    var(--space-xl) 0;
+    140px 0;
 }
 
 .section-title {
+  max-width: 1000px;
+
   font-size:
     clamp(
       46px,
@@ -514,13 +560,19 @@ a {
       92px
     );
 
+  font-weight: 400;
+
   line-height: .94;
 
   letter-spacing: -3px;
+}
 
-  font-weight: 400;
+.large-text {
+  color: var(--white-soft);
 
-  max-width: 1000px;
+  font-size: 18px;
+
+  line-height: 1.9;
 }
 
 
@@ -541,19 +593,6 @@ a {
   max-width: 850px;
 
   margin-top: 45px;
-}
-
-
-/* =========================================================
-   LARGE TEXT
-   ========================================================= */
-
-.large-text {
-  color: var(--white-soft);
-
-  font-size: 18px;
-
-  line-height: 1.9;
 }
 
 
@@ -582,17 +621,16 @@ a {
 
   height: 48px;
 
-  padding:
-    0 16px;
+  padding: 0 16px;
 
   border:
     1px solid var(--line);
 
+  outline: none;
+
   background: var(--black-card);
 
   color: var(--white);
-
-  outline: none;
 
   font-size: 10px;
 
@@ -620,12 +658,12 @@ a {
 .product-card {
   position: relative;
 
+  overflow: hidden;
+
   background: var(--black-card);
 
   border:
-    1px solid rgba(255,255,255,.08);
-
-  overflow: hidden;
+    1px solid rgba(255, 255, 255, .08);
 
   transition:
     transform var(--transition),
@@ -636,42 +674,65 @@ a {
   transform: translateY(-6px);
 
   border-color:
-    rgba(255,255,255,.28);
+    rgba(255, 255, 255, .28);
 }
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
 
 .product-image {
   position: relative;
 
+  width: 100%;
+
   aspect-ratio: 1 / 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   overflow: hidden;
 
-  background: #111;
+  background:
+    #111;
 }
 
 .product-image img {
-  width: 100%;
+  display: block;
 
+  width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center center;
 
   transition:
-    transform .8s cubic-bezier(.22,.61,.36,1);
+    transform .8s
+    cubic-bezier(.22,.61,.36,1);
 }
 
-.product-card:hover .product-image img {
-  transform: scale(1.045);
+.product-card:hover
+.product-image img {
+  transform: scale(1.025);
 }
+
+
+/* =========================================================
+   PRODUCT BADGES
+   ========================================================= */
 
 .product-badges {
   position: absolute;
 
+  z-index: 5;
+
   top: 20px;
-
   left: 20px;
-
-  z-index: 2;
 
   display: flex;
 
@@ -685,10 +746,10 @@ a {
     7px 10px;
 
   background:
-    rgba(0,0,0,.75);
+    rgba(0, 0, 0, .75);
 
   border:
-    1px solid rgba(255,255,255,.2);
+    1px solid rgba(255,255,255,.20);
 
   font-size: 8px;
 
@@ -697,11 +758,18 @@ a {
   text-transform: uppercase;
 }
 
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
 .product-info {
   padding: 28px;
 }
 
 .product-meta {
+  margin-bottom: 10px;
+
   color: var(--grey);
 
   font-size: 9px;
@@ -709,26 +777,24 @@ a {
   letter-spacing: 2px;
 
   text-transform: uppercase;
-
-  margin-bottom: 10px;
 }
 
 .product-name {
+  margin-bottom: 10px;
+
   font-size: 24px;
 
   font-weight: 400;
-
-  margin-bottom: 10px;
 }
 
 .product-description {
+  margin-bottom: 18px;
+
   color: var(--grey);
 
   font-size: 13px;
 
   line-height: 1.7;
-
-  margin-bottom: 18px;
 }
 
 .product-price {
@@ -752,8 +818,7 @@ a {
 
   min-height: 42px;
 
-  padding:
-    7px 8px;
+  padding: 7px 8px;
 
   border:
     1px solid var(--line);
@@ -780,11 +845,11 @@ a {
 .size-button small {
   display: block;
 
+  margin-top: 3px;
+
   color: var(--grey);
 
   font-size: 7px;
-
-  margin-top: 3px;
 }
 
 .size-button:hover small {
@@ -810,24 +875,23 @@ a {
 }
 
 .story-content p {
+  margin-bottom: 28px;
+
   color: var(--white-soft);
 
   font-size: 17px;
 
   line-height: 1.9;
-
-  margin-bottom: 28px;
 }
 
 .story-content p.highlight {
+  padding: 30px 0;
+
   color: var(--white);
 
   font-size: 28px;
 
   line-height: 1.3;
-
-  padding:
-    30px 0;
 
   border-top:
     1px solid var(--line);
@@ -838,7 +902,7 @@ a {
 
 
 /* =========================================================
-   SIZE TOOL
+   SIZE FINDER
    ========================================================= */
 
 .size-tool {
@@ -863,11 +927,11 @@ a {
 }
 
 .measurement-field label {
+  color: var(--grey);
+
   font-size: 9px;
 
   letter-spacing: 2px;
-
-  color: var(--grey);
 
   text-transform: uppercase;
 }
@@ -877,8 +941,9 @@ a {
 
   height: 55px;
 
-  padding:
-    0 16px;
+  padding: 0 16px;
+
+  outline: none;
 
   border:
     1px solid var(--line);
@@ -886,8 +951,6 @@ a {
   background: var(--black-card);
 
   color: var(--white);
-
-  outline: none;
 
   font-size: 15px;
 }
@@ -934,9 +997,9 @@ a {
    ========================================================= */
 
 .size-guide {
-  overflow-x: auto;
-
   margin-top: 70px;
+
+  overflow-x: auto;
 }
 
 .size-guide table {
@@ -952,10 +1015,10 @@ a {
   padding:
     18px 15px;
 
+  text-align: left;
+
   border-bottom:
     1px solid var(--line);
-
-  text-align: left;
 }
 
 .size-guide th {
@@ -963,11 +1026,11 @@ a {
 
   font-size: 9px;
 
+  font-weight: 400;
+
   letter-spacing: 2px;
 
   text-transform: uppercase;
-
-  font-weight: 400;
 }
 
 .size-guide td {
@@ -984,12 +1047,20 @@ a {
 }
 
 .footer-logo {
+  display: block;
+
   width: auto;
 
-  height: 75px;
+  max-width: 240px;
+
+  height: auto;
+
+  max-height: 100px;
 
   margin:
     0 auto 40px;
+
+  object-fit: contain;
 }
 
 .social-links {
@@ -1007,13 +1078,13 @@ a {
 }
 
 .social-links a {
+  color: var(--grey);
+
   font-size: 10px;
 
   letter-spacing: 3px;
 
   text-transform: uppercase;
-
-  color: var(--grey);
 
   transition:
     color var(--transition);
@@ -1045,15 +1116,15 @@ a {
    ========================================================= */
 
 .site-footer {
-  width: min(
-    var(--max-width),
-    calc(100% - 160px)
-  );
+  width:
+    min(
+      var(--max-width),
+      calc(100% - 160px)
+    );
 
   margin: auto;
 
-  padding:
-    35px 0;
+  padding: 35px 0;
 
   display: flex;
 
@@ -1078,8 +1149,10 @@ a {
    ========================================================= */
 
 .empty-products {
-  padding:
-    80px 20px;
+  grid-column:
+    1 / -1;
+
+  padding: 80px 20px;
 
   text-align: center;
 
@@ -1091,7 +1164,7 @@ a {
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
    ========================================================= */
 
 .reveal {
@@ -1114,7 +1187,7 @@ a {
 
 
 /* =========================================================
-   MOBILE
+   TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -1137,9 +1210,7 @@ a {
     position: absolute;
 
     top: 82px;
-
     left: 0;
-
     right: 0;
 
     padding: 30px 24px;
@@ -1205,12 +1276,11 @@ a {
 
     gap: 60px;
   }
-
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -1232,11 +1302,22 @@ a {
   }
 
   .brand img {
-    height: 40px;
+    max-width: 120px;
+
+    max-height: 45px;
   }
 
   .hero {
     height: 720px;
+
+    min-height: 650px;
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
   }
 
   .hero-title {
@@ -1281,6 +1362,10 @@ a {
     padding: 22px;
   }
 
+  .product-image {
+    aspect-ratio: 1 / 1;
+  }
+
   .size-tool {
     grid-template-columns: 1fr;
   }
@@ -1290,9 +1375,9 @@ a {
   }
 
   .social-links {
-    gap: 22px;
-
     flex-direction: column;
+
+    gap: 22px;
   }
 
   .site-footer {
@@ -1302,7 +1387,26 @@ a {
 
     line-height: 1.8;
   }
+}
 
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .section-title {
+    font-size: 40px;
+  }
+
+  .product-name {
+    font-size: 21px;
+  }
 }
 
 
@@ -1325,5 +1429,4 @@ a {
 
     transition-duration: .01ms !important;
   }
-
 }
