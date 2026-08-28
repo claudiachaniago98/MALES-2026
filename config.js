@@ -4,7 +4,7 @@ const MALES_CONFIG={
  ticker:['MALES itu gaya, tapi tetap produktif.','Bangkit. Berkarya. Berkontribusi.','Pakai yang kamu percaya. Kerjakan yang kamu mulai.','#MALESUntukIndonesia'],
  collection:{genders:['Pria','Wanita'],categories:['Kaos','Polo','Celana','Topi','Jaket','Sepatu']},
  price:{currency:'IDR',sizes:{S:300000,M:300000,L:300000,XL:300000,'2XL':325000,'3XL':325000,'4XL':350000}},
- defaults:{fabric:'Cotton Combed 24s Reguler',fit:'Oversize Streetwear',colors:['Putih','Hitam','Cream','Cokelat','Navy','Fuchsia'],sizes:['S','M','L','XL','2XL','3XL','4XL']},
+ defaults:{fabric:'Cotton Combed 24s Reguler',fit:'Oversize Streetwear',colors:['Putih','Hitam','Sand','Cokelat','Navy','Abu-abu'],sizes:['S','M','L','XL','2XL','3XL','4XL']},
  sizeGuide:[
   {s:'S',h:[155,168],w:[45,60],c:[82,90],b:[39,43],p:[70,78]},
   {s:'M',h:[160,173],w:[55,68],c:[88,98],b:[42,46],p:[76,84]},
@@ -27,7 +27,7 @@ const MALES_CONFIG={
  ['010','KID / 10','KID','assets/produk/produk-10.png','Artwork karakter MALES yang playful namun tetap dewasa.'],
  ['011','INDONESIA / 11','INDONESIA','assets/produk/produk-11.png','Series dengan energi warna yang lebih ekspresif.'],
  ['012','INDONESIA / 12','INDONESIA','assets/produk/produk-12.png','Interpretasi lain dari semangat #MALESUntukIndonesia.']
- ].map((x,i)=>({id:'MALES-K'+x[0],name:x[1],motif:x[2],gender:'Pria',category:'Kaos',image:x[3],description:x[4],featured:i<2,colors:i<6?['Putih','Hitam','Cream','Cokelat','Navy','Fuchsia']:['Hitam','Cream','Navy','Fuchsia']})),
+ ].map((x,i)=>({id:'MALES-K'+x[0],name:x[1],motif:x[2],gender:'Pria',category:'Kaos',image:x[3],description:x[4],featured:i<2,colors:i<6?['Putih','Hitam','Sand','Cokelat','Navy','Abu-abu']:['Hitam','Sand','Navy','Abu-abu']})),
  story:{image:'assets/brand/MODEL UNTUK STORY.png'},
  contact:{whatsapp:{number:'',display:'Nomor admin belum diatur'},message:'Halo Admin MALES, saya ingin melakukan pemesanan.'},
  social:{instagram:'#',tiktok:'#',youtube:'#'}
